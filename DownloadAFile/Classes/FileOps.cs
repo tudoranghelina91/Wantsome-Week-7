@@ -29,7 +29,6 @@ namespace DownloadAFile.Classes
             if (File.Exists(fileName))
             {
                 OutputHandling.Question($"There is already an existing file called {fileName}. Do you want to overwrite it? Y / N");
-
                 if (!InputHandling.QuestionOptions(false))
                     Rename(ref fileName, uri);
             }

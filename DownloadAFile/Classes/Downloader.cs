@@ -22,20 +22,20 @@ namespace DownloadAFile.Classes
 
                 catch (WebException)
                 {
-                    OutputHandling.Error("EMPTY INNER PATH NAME NOT LEGAL");
+                    OutputHandling.Error($"UNABLE TO DOWNLOAD {fileName}, PLEASE MAKE SURE THAT THE FILE PATH IS CORRECT");
                 }
             }
 
             catch (UriFormatException)
             {
-                OutputHandling.Error("INVALID URI");
+                OutputHandling.Error("INVALID URL FORMAT SPECIFIED");
             }
         }
 
         public static void Download(Uri uri, string fileName, WebClient webClient)
         {
-            OutputHandling.Message($"Downloading {fileName}: ", ConsoleColor.Cyan);
-            webClient.DownloadFile(uri, fileName.ToString());
+            OutputHandling.Message($"Downloading {fileName}...", ConsoleColor.Cyan);
+            webClient.DownloadFile(uri, fileName);
             OutputHandling.Message($"{fileName} has been successfully downloaded", ConsoleColor.Green);
         }
     }
