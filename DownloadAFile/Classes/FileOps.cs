@@ -24,14 +24,14 @@ namespace DownloadAFile.Classes
             return fileName.ToString();
         }
 
-        public static void TryOverWrite(string fileName, Uri uri)
+        public static void TryOverWrite(ref string fileName, Uri uri)
         {
             if (File.Exists(fileName))
             {
                 OutputHandling.Question($"There is already an existing file called {fileName}. Do you want to overwrite it? Y / N");
 
                 if (!InputHandling.QuestionOptions(false))
-                    FileOps.Rename(ref fileName, uri);
+                    Rename(ref fileName, uri);
             }
         }
     }

@@ -16,7 +16,7 @@ namespace DownloadAFile.Classes
                 
                 try
                 {
-                    FileOps.TryOverWrite(fileName, uri);
+                    FileOps.TryOverWrite(ref fileName, uri);
                     Download(uri, fileName, webClient);
                 }
 
@@ -31,8 +31,6 @@ namespace DownloadAFile.Classes
                 OutputHandling.Error("INVALID URI");
             }
         }
-
-
 
         public static void Download(Uri uri, string fileName, WebClient webClient)
         {
