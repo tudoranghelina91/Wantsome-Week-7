@@ -46,6 +46,11 @@ namespace ReadFileContents.Classes
                 OutputHandling.Error("YOU ARE NOT ALLOWED TO ACCESS THIS PATH");
             }
 
+            catch(Exception)
+            {
+                throw;
+            }
+
             finally
             {
                 ExitProgram();
