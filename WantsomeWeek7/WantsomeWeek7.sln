@@ -7,6 +7,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WantsomeWeek7", "WantsomeWe
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SquareRoot", "..\SquareRoot\SquareRoot.csproj", "{0F63A99B-7437-4479-83F8-0403CF3026DB}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ReadFileContents", "..\ReadFileContents\ReadFileContents.csproj", "{AA366CBC-EB87-4FB7-AB8E-45B61A215536}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -21,6 +23,10 @@ Global
 		{0F63A99B-7437-4479-83F8-0403CF3026DB}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{0F63A99B-7437-4479-83F8-0403CF3026DB}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{0F63A99B-7437-4479-83F8-0403CF3026DB}.Release|Any CPU.Build.0 = Release|Any CPU
+		{AA366CBC-EB87-4FB7-AB8E-45B61A215536}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{AA366CBC-EB87-4FB7-AB8E-45B61A215536}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{AA366CBC-EB87-4FB7-AB8E-45B61A215536}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{AA366CBC-EB87-4FB7-AB8E-45B61A215536}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
