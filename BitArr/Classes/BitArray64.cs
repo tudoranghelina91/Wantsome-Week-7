@@ -12,6 +12,9 @@ namespace BitArr.Classes
         public ulong Number { get; private set; }
         private int[] number = new int[64];
         private int k = 63;
+        public int Length { get; } = 64;
+
+        // Constructor
 
         public BitArray64(ulong number)
         {
@@ -20,6 +23,8 @@ namespace BitArr.Classes
             // transformam din baza 10 in baza 2;
             b10ToB2(number, ref this.number);
         }
+
+        // Ienumerator and Ienumerable
 
         public IEnumerator<int> GetEnumerator()
         {
@@ -32,16 +37,24 @@ namespace BitArr.Classes
             return GetEnumerator();
         }
 
+        // Indexer
+
         public int this[int index]
         {
             get
             {
+                if (index >= 64)
+                    throw new IndexOutOfRangeException("Only [0-63] are valid indexes");
+
                 return number[index];
             }
 
             set
             {
-                if (value > 1 || value < 0)
+                if (index >= 64)
+                    throw new IndexOutOfRangeException("Only [0-63] are valid indexes");
+
+                else if (value > 1 || value < 0)
                     throw new InvalidOperationException("0 or 1 allowed only");
 
                 else
@@ -54,6 +67,8 @@ namespace BitArr.Classes
             }
         }
 
+        // ToString
+
         public override string ToString()
         {
             StringBuilder output = new StringBuilder();
@@ -61,6 +76,29 @@ namespace BitArr.Classes
                 output.Append(number[i]);
 
             return output.ToString();
+        }
+
+        // Equals
+        public override bool Equals(object obj)
+        {
+            foreach (int digit1 in this)
+                foreach (int digit2 in obj as BitArray64)
+                    if (digit1 != digit2)
+                        return false;
+
+            return true;
+        }
+
+        // == AND !=
+
+        public static bool operator == (BitArray64 a, BitArray64 b)
+        {
+            return a.Equals(b);
+        }
+
+        public static bool operator != (BitArray64 a, BitArray64 b)
+        {
+            return !a.Equals(b);
         }
 
         private void b2ToB10()
