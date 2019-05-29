@@ -13,6 +13,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DownloadAFile", "..\Downloa
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ReadingANumber", "..\ReadingANumber\ReadingANumber.csproj", "{1623126A-C314-4D32-A392-3727897766CD}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BitArr", "..\BitArr\BitArr.csproj", "{4276D152-0F26-411C-A361-46B7FE48ECDF}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -39,6 +41,10 @@ Global
 		{1623126A-C314-4D32-A392-3727897766CD}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{1623126A-C314-4D32-A392-3727897766CD}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{1623126A-C314-4D32-A392-3727897766CD}.Release|Any CPU.Build.0 = Release|Any CPU
+		{4276D152-0F26-411C-A361-46B7FE48ECDF}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{4276D152-0F26-411C-A361-46B7FE48ECDF}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{4276D152-0F26-411C-A361-46B7FE48ECDF}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{4276D152-0F26-411C-A361-46B7FE48ECDF}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
