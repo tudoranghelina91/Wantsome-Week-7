@@ -11,9 +11,18 @@ namespace BitArr
     {
         static void Main(string[] args)
         {
-            BitArray64 simpleArray = new BitArray64(123456);
-            Console.WriteLine(simpleArray);
+            BitArray64 simpleArr = new BitArray64(999999999999);
+            Console.WriteLine(simpleArr);
+            Console.WriteLine(simpleArr.Number);
+            for (int i = 3; i < 43; i+=2)
+            {
+                simpleArr[i] = 1;
+            }
+            Console.WriteLine(simpleArr);
+            Console.WriteLine(simpleArr.Number);
             Console.ReadKey();
         }
+
+            
     }
 }
