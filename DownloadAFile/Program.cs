@@ -10,7 +10,9 @@ namespace DownloadAFile
         {
             string url = InputHandling.ReadString("Url to download from: ");
             Downloader.Download(url);
-            Console.ReadKey();
+            OutputHandling.Question("Do you want to download another file? Y / N");
+            if (InputHandling.QuestionOptions())
+                Main(args);
         }
     }
 }
