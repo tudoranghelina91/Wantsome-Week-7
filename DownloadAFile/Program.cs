@@ -1,6 +1,6 @@
-﻿using System;
-using IODS.Handlers;
+﻿using IODS.Handlers;
 using DownloadAFile.Classes;
+
 
 namespace DownloadAFile
 {
