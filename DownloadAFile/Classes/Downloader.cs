@@ -1,6 +1,7 @@
 ﻿using System;
 using IODS.Handlers;
 using System.Net;
+using System.IO;
 
 namespace DownloadAFile.Classes
 {
@@ -12,8 +13,16 @@ namespace DownloadAFile.Classes
             {
                 Uri uri = new Uri(url);
                 string fileName = FileOps.SetName(uri);
+                Uri currentPath = new Uri(Directory.GetCurrentDirectory() + '/' + fileName);
+
                 WebClient webClient = new WebClient();
-                
+
+                if (uri.AbsolutePath == currentPath.AbsolutePath)
+                {
+                    OutputHandling.Error("UNABLE TO DOWNLOAD A FILE TO THE SAME LOCATION THAT THE ORIGINAL FILE RESIDES IN");
+                    return;
+                }
+
                 try
                 {
                     FileOps.TryOverWrite(ref fileName, uri);
