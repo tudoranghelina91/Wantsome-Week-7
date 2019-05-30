@@ -81,12 +81,16 @@ namespace BitArr.Classes
         // Equals
         public override bool Equals(object obj)
         {
-            foreach (int digit1 in this)
-                foreach (int digit2 in obj as BitArray64)
-                    if (digit1 != digit2)
+            if (Number == (obj as BitArray64).Number && GetHashCode() == (obj as BitArray64).GetHashCode())
+            {
+                for (int i = 0; i < number.Length; i++)
+                    if (this[i] != (obj as BitArray64)[i])
                         return false;
 
-            return true;
+                return true;
+            }
+
+            return false;
         }
 
         // == AND !=
@@ -99,6 +103,18 @@ namespace BitArr.Classes
         public static bool operator != (BitArray64 a, BitArray64 b)
         {
             return !a.Equals(b);
+        }
+
+        public override int GetHashCode()
+        {
+            int hash = 0;
+
+            for (int i = 0; i < 64; i++)
+            {
+                hash += ((this[i]) * i);
+            }
+
+            return hash;
         }
 
         private void b2ToB10()
