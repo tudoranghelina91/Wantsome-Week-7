@@ -19,10 +19,10 @@ namespace ReadFileContents.Classes
                 PrintFileContents(fileContents.ToString());
             }
 
-            catch(FileNotFoundException)
+            catch(ArgumentException)
             {
                 fileContents.Clear();
-                OutputHandling.Error("FILE NOT FOUND!");
+                OutputHandling.Error("PATH NAMES CANNOT CONTAIN SPECIAL CHARACTERS OR EMPTY SPACES");
             }
 
             catch(DirectoryNotFoundException)
@@ -31,10 +31,10 @@ namespace ReadFileContents.Classes
                 OutputHandling.Error("NO SUCH DIRECTORY!");
             }
 
-            catch(ArgumentException)
+            catch(FileNotFoundException)
             {
                 fileContents.Clear();
-                OutputHandling.Error("PATH NAMES CANNOT CONTAIN SPECIAL CHARACTERS OR EMPTY SPACES");
+                OutputHandling.Error("FILE NOT FOUND!");
             }
 
             catch(UnauthorizedAccessException)
