@@ -56,7 +56,7 @@ namespace ReadFileContents.Classes
 
         public static void PrintFileContents(string fileContents)
         {
-            OutputHandling.Message(fileContents.ToString());
+            OutputHandling.Message(fileContents);
         }
 
         public static void ExitProgram()
