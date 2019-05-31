@@ -33,7 +33,7 @@ namespace BitArr.Classes
             Random randomValue = new Random();
             for (int i = 0; i < 64; i++)
             {
-                arr[randomPosition.Next(0, 63)] = randomValue.Next(0, 1);
+                arr[randomPosition.Next(0, 63)] = (uint)randomValue.Next(0, 1);
             }
         }
     }
