@@ -1,10 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using IODS.Handlers;
-using System.IO;
+﻿using IODS.Handlers;
 using ReadFileContents.Classes;
 
 namespace ReadFileContents
