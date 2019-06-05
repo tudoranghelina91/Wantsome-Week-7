@@ -4,6 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using HomeworkLINQ.Classes;
+using System.Collections;
 
 namespace HomeworkLINQ
 {
@@ -173,7 +174,123 @@ namespace HomeworkLINQ
             foreach (Student student in teenagerStudent)
                 Console.WriteLine(student);
 
+            Console.WriteLine("==================================================");
+            // Example: WHERE CLAUSE - LINQ query syntax C#
+
+            var filteredResult = from s in studentArray
+                                 where s.Age > 12 && s.Age < 20
+                                 select s.Name;
+
+            foreach (var s in filteredResult)
+                Console.WriteLine(s);
+
+            Console.WriteLine("==================================================");
+
+            // Example: WHERE CLAUSE with FUNC
+            Func<Student, bool> isTeenAger = delegate (Student s)
+             {
+                 return s.Age > 12 && s.Age < 20;
+             };
+
+            var filteredResult2 = from s in studentArray
+                             where isTeenAger(s)
+                             select s;
+
+            foreach (var s in filteredResult2)
+                Console.WriteLine(s);
+
+            Console.WriteLine("==================================================");
+
+            // WHERE clause with overloaded function IsTeenAger
+
+            var filteredResult3 = from s in studentArray
+                                  where isTeenAger(s)
+                                  select s.Name;
+
+            foreach (var s in filteredResult3)
+                Console.WriteLine(s);
+
+            Console.WriteLine("==================================================");
+
+            // WHERE CLAUSE WITH METHOD SYNTAX
+            var filteredResult4 = studentArray.Where(s => s.Age > 12 && s.Age < 20);
+
+            foreach (var s in filteredResult4)
+                Console.WriteLine(s);
+
+            Console.WriteLine("==================================================");
+            // WHERE EXTENSION METHOD IN C#
+            
+            var filteredResult5 = studentArray.Where((s, x) =>
+            {
+                if (x % 2 == 0)
+                    return true;
+
+                return false;
+            });
+
+            foreach (var s in filteredResult5)
+                Console.WriteLine(s.Name);
+            Console.WriteLine("==================================================");
+
+            // MULTIPLE WHERE CLAUSE
+
+            var filteredResult6 = from s in studentArray
+                                  where s.Age > 12
+                                  where s.Age < 20
+                                  select s;
+
+            foreach (var s in filteredResult5)
+                Console.WriteLine(s);
+
+            Console.WriteLine("==================================================");
+
+
+            // EXAPLE: OfType operator in C#
+
+            IList mixedList = new ArrayList();
+            mixedList.Add(0);
+            mixedList.Add("One");
+            mixedList.Add("Two");
+            mixedList.Add(3);
+            mixedList.Add(new Student("Gogu", 19));
+
+            var stringResult = from s in mixedList.OfType<string>()
+                               select s;
+
+            var intResult = from s in mixedList.OfType<int>()
+                            select s;
+
+            Console.WriteLine("String results");
+            foreach (var s in stringResult)
+                Console.WriteLine(s);
+
+            Console.WriteLine("Integer results");
+            foreach (var s in intResult)
+                Console.WriteLine(s);
+
+            Console.WriteLine("=====================================================");
+
+            // EXAMPLE: OfType in Method Syntax
+            stringResult = mixedList.OfType<string>();
+            intResult = mixedList.OfType<int>();
+
+            Console.WriteLine("String results");
+            foreach (var s in stringResult)
+                Console.WriteLine(s);
+
+            Console.WriteLine("Integer results");
+            foreach (var s in intResult)
+                Console.WriteLine(s);
+
+            Console.WriteLine("=====================================================");
+
             Console.ReadKey();
+        }
+
+        public static bool isTeenAger(Student stud)
+        {
+            return stud.Age > 17 && stud.Age < 20;
         }
     }
 }
