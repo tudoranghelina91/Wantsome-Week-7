@@ -4,10 +4,10 @@
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProjectGuid>{002EB9FE-5EFF-4147-96CE-32FE7DE0478F}</ProjectGuid>
+    <ProjectGuid>{4CD8C94A-FD98-48BF-A2FA-11FEF5C91B91}</ProjectGuid>
     <OutputType>Exe</OutputType>
-    <RootNamespace>DelegateMethods</RootNamespace>
-    <AssemblyName>DelegateMethods</AssemblyName>
+    <RootNamespace>HomeworkActionDelegate</RootNamespace>
+    <AssemblyName>HomeworkActionDelegate</AssemblyName>
     <TargetFrameworkVersion>v4.7.2</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>

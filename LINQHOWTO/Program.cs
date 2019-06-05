@@ -21,7 +21,7 @@ namespace LINQHOWTO
             foreach (string s in stringsWithM)
                 Console.WriteLine(s);
 
-            var stringWithMWhere  = strings.Where(s => strings.)
+            var stringWithMWhere = strings.Where(s => s.Contains("M"));
 
             Console.ReadKey();
         }

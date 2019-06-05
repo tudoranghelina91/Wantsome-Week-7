@@ -17,8 +17,6 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BitArr", "..\BitArr\BitArr.
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DelegateMethodHOWTO", "..\DelegateMethodHOWTO\DelegateMethodHOWTO.csproj", "{17E6C1EF-DC07-4E6F-B19B-D44077787E11}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DelegateMethods", "..\DelegateMethods\DelegateMethods.csproj", "{002EB9FE-5EFF-4147-96CE-32FE7DE0478F}"
-EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ExtensionMethods", "..\ExtensionMethods\ExtensionMethods.csproj", "{66AA795A-9D1D-4B41-BEC1-D15792579BDB}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "HomeworkDelegates", "..\HomeworkDelegates\HomeworkDelegates.csproj", "{8FC37689-B7FE-426A-B12A-F496CA1C302B}"
@@ -26,6 +24,8 @@ EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "LINQHOWTO", "..\LINQHOWTO\LINQHOWTO.csproj", "{7490A918-D590-4BFA-9DBE-A60908D30BE8}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "HomeworkFunc", "..\HomeworkFunc\HomeworkFunc.csproj", "{7ADDED09-85CF-4283-BE9E-3986DEA15745}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "HomeworkActionDelegate", "..\HomeworkActionDelegate\HomeworkActionDelegate.csproj", "{4CD8C94A-FD98-48BF-A2FA-11FEF5C91B91}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -61,10 +61,6 @@ Global
 		{17E6C1EF-DC07-4E6F-B19B-D44077787E11}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{17E6C1EF-DC07-4E6F-B19B-D44077787E11}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{17E6C1EF-DC07-4E6F-B19B-D44077787E11}.Release|Any CPU.Build.0 = Release|Any CPU
-		{002EB9FE-5EFF-4147-96CE-32FE7DE0478F}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{002EB9FE-5EFF-4147-96CE-32FE7DE0478F}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{002EB9FE-5EFF-4147-96CE-32FE7DE0478F}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{002EB9FE-5EFF-4147-96CE-32FE7DE0478F}.Release|Any CPU.Build.0 = Release|Any CPU
 		{66AA795A-9D1D-4B41-BEC1-D15792579BDB}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{66AA795A-9D1D-4B41-BEC1-D15792579BDB}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{66AA795A-9D1D-4B41-BEC1-D15792579BDB}.Release|Any CPU.ActiveCfg = Release|Any CPU
@@ -81,6 +77,10 @@ Global
 		{7ADDED09-85CF-4283-BE9E-3986DEA15745}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{7ADDED09-85CF-4283-BE9E-3986DEA15745}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{7ADDED09-85CF-4283-BE9E-3986DEA15745}.Release|Any CPU.Build.0 = Release|Any CPU
+		{4CD8C94A-FD98-48BF-A2FA-11FEF5C91B91}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{4CD8C94A-FD98-48BF-A2FA-11FEF5C91B91}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{4CD8C94A-FD98-48BF-A2FA-11FEF5C91B91}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{4CD8C94A-FD98-48BF-A2FA-11FEF5C91B91}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

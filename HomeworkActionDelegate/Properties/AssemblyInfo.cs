@@ -5,11 +5,11 @@ using System.Runtime.InteropServices;
 // General Information about an assembly is controlled through the following
 // set of attributes. Change these attribute values to modify the information
 // associated with an assembly.
-[assembly: AssemblyTitle("DelegateMethods")]
+[assembly: AssemblyTitle("HomeworkActionDelegate")]
 [assembly: AssemblyDescription("")]
 [assembly: AssemblyConfiguration("")]
 [assembly: AssemblyCompany("")]
-[assembly: AssemblyProduct("DelegateMethods")]
+[assembly: AssemblyProduct("HomeworkActionDelegate")]
 [assembly: AssemblyCopyright("Copyright ©  2019")]
 [assembly: AssemblyTrademark("")]
 [assembly: AssemblyCulture("")]
@@ -20,7 +20,7 @@ using System.Runtime.InteropServices;
 [assembly: ComVisible(false)]
 
 // The following GUID is for the ID of the typelib if this project is exposed to COM
-[assembly: Guid("002eb9fe-5eff-4147-96ce-32fe7de0478f")]
+[assembly: Guid("4cd8c94a-fd98-48bf-a2fa-11fef5c91b91")]
 
 // Version information for an assembly consists of the following four values:
 //
