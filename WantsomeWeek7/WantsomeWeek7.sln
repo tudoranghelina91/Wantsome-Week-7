@@ -33,6 +33,10 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "HomeworkLINQ", "..\Homework
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "UsersAndPosts", "..\UsersAndPosts\UsersAndPosts.csproj", "{072D3C7D-E849-40CA-AFB4-4A50CAB0F380}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "StringBuilderSubstring", "..\StringBuilderSubstring\StringBuilderSubstring.csproj", "{34DA9826-5FAF-43AA-BCAD-D9330CACA9A2}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "IenumerableExtensions", "..\IenumerableExtensions\IenumerableExtensions.csproj", "{BBEFFE13-E144-41FE-A550-898A3000B96C}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -99,6 +103,14 @@ Global
 		{072D3C7D-E849-40CA-AFB4-4A50CAB0F380}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{072D3C7D-E849-40CA-AFB4-4A50CAB0F380}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{072D3C7D-E849-40CA-AFB4-4A50CAB0F380}.Release|Any CPU.Build.0 = Release|Any CPU
+		{34DA9826-5FAF-43AA-BCAD-D9330CACA9A2}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{34DA9826-5FAF-43AA-BCAD-D9330CACA9A2}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{34DA9826-5FAF-43AA-BCAD-D9330CACA9A2}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{34DA9826-5FAF-43AA-BCAD-D9330CACA9A2}.Release|Any CPU.Build.0 = Release|Any CPU
+		{BBEFFE13-E144-41FE-A550-898A3000B96C}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{BBEFFE13-E144-41FE-A550-898A3000B96C}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{BBEFFE13-E144-41FE-A550-898A3000B96C}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{BBEFFE13-E144-41FE-A550-898A3000B96C}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
