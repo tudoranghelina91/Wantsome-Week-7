@@ -13,6 +13,8 @@ namespace HomeworkDelegates
 
         static void Main(string[] args)
         {
+            // EXAMPLE: C# DELEGATE
+
             // Print delegate points to PrintNumber
             Print printDelegate = PrintNumber;
 
@@ -28,8 +30,25 @@ namespace HomeworkDelegates
             printDelegate(10000);
             printDelegate(200);
 
+            // EXAMPLE: DELEGATE AS PARAMETER
+
+            PrintHelper(PrintNumber, 100000);
+            PrintHelper(PrintMoney, 100000);
+
+            // EXAMPLE: MULTICAST DELEGATE
+
+            printDelegate += PrintHexadecimal;
+            printDelegate += PrintMoney;
+
+            printDelegate(1000);
+
+            printDelegate -= PrintHexadecimal;
+            printDelegate(2000);
+
             Console.ReadKey();
         }
+
+        // EXAMPLE: C# DELEGATE FUNCTIONS
 
         public static void PrintNumber(int num)
         {
@@ -40,5 +59,20 @@ namespace HomeworkDelegates
         {
             Console.WriteLine("Money: {0:C}", money);
         }
+
+        // EXAMPLE: DELEGATE AS PARAMETER FUNCTIONS
+
+        public static void PrintHelper(Print delegateFunc, int numToPrint)
+        {
+            delegateFunc(numToPrint);
+        }
+
+        // EXAMPLE: MULTICAST DELEGATE FUNCTIONS
+        public static void PrintHexadecimal(int dec)
+        {
+            Console.WriteLine("Hexadecimal: {0:X}", dec);
+        }
+
+
     }
 }
