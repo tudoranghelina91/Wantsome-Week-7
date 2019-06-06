@@ -37,6 +37,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "StringBuilderSubstring", ".
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "IenumerableExtensions", "..\IenumerableExtensions\IenumerableExtensions.csproj", "{BBEFFE13-E144-41FE-A550-898A3000B96C}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "HomeworkStudentsLINQ", "..\HomeworkStudentsLINQ\HomeworkStudentsLINQ.csproj", "{46168C04-16C9-4A2B-8BFC-9D22483B03B9}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -111,6 +113,10 @@ Global
 		{BBEFFE13-E144-41FE-A550-898A3000B96C}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{BBEFFE13-E144-41FE-A550-898A3000B96C}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{BBEFFE13-E144-41FE-A550-898A3000B96C}.Release|Any CPU.Build.0 = Release|Any CPU
+		{46168C04-16C9-4A2B-8BFC-9D22483B03B9}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{46168C04-16C9-4A2B-8BFC-9D22483B03B9}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{46168C04-16C9-4A2B-8BFC-9D22483B03B9}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{46168C04-16C9-4A2B-8BFC-9D22483B03B9}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
