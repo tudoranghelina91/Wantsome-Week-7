@@ -6,9 +6,15 @@ using System.Threading.Tasks;
 
 namespace HomeworkStudentsLINQ.Classes
 {
-    class Group
+    public class Group
     {
+        private static int groupctr = 0;
         public int GroupNumber { get; set; }
         public string DepartmentName { get; set; }
+        public Group(string departmentName)
+        {
+            DepartmentName = departmentName;
+            GroupNumber = ++groupctr;
+        }
     }
 }

@@ -8,16 +8,16 @@ namespace HomeworkStudentsLINQ.Classes
 {
     class Queries
     {
-        public static IEnumerable<Student> FirstBeforeLast(List<Student> students)
+        public static IEnumerable<Student> FirstBeforeLast(IEnumerable<Student> students)
         {
             IEnumerable<Student> firstBeforeLast = from student in students
-                              where (student.FirstName.CompareTo(student.LastName) > 0)
+                              where (student.FirstName.CompareTo(student.LastName) <= 0)
                               select student;
 
             return firstBeforeLast;              
         }
 
-        public static IEnumerable<Student> AgeRange(List<Student> students)
+        public static IEnumerable<Student> AgeRange(IEnumerable<Student> students)
         {
             IEnumerable<Student> ageRange = from student in students
                               where (student.Age >= 18 && student.Age <= 24)
@@ -26,7 +26,7 @@ namespace HomeworkStudentsLINQ.Classes
             return ageRange;                 
         }
 
-        public static IEnumerable<Student> OrderStudents(List<Student> students)
+        public static IEnumerable<Student> OrderStudents(IEnumerable<Student> students)
         {
             IEnumerable<Student> orderStudents;
 
@@ -36,7 +36,7 @@ namespace HomeworkStudentsLINQ.Classes
             return orderStudents;
         }
 
-        public static IEnumerable<Student> OrderStudentsLINQ(List<Student> students)
+        public static IEnumerable<Student> OrderStudentsLINQ(IEnumerable<Student> students)
         {
             IEnumerable<Student> orderStudents = from student in students
                             orderby student.FirstName descending
@@ -46,7 +46,7 @@ namespace HomeworkStudentsLINQ.Classes
             return orderStudents;
         }
 
-        public static IEnumerable<Student> StudentGroup(List<Student> students)
+        public static IEnumerable<Student> StudentGroup(IEnumerable<Student> students)
         {
             IEnumerable<Student> studentGroups = students.Where(student => student.GroupNumber == 2)
                                     .OrderBy(student => student.FirstName);
@@ -54,7 +54,7 @@ namespace HomeworkStudentsLINQ.Classes
             return studentGroups;
         }
 
-        public static IEnumerable<Student> StudentGroupLINQ(List<Student> students)
+        public static IEnumerable<Student> StudentGroupLINQ(IEnumerable<Student> students)
         {
             IEnumerable<Student> studentGroups = from student in students
                             where student.GroupNumber == 2
@@ -64,7 +64,7 @@ namespace HomeworkStudentsLINQ.Classes
             return studentGroups;
         }
 
-        public static IEnumerable<Student> StudentsByEmail(List<Student> students)
+        public static IEnumerable<Student> StudentsByEmail(IEnumerable<Student> students)
         {
             IEnumerable<Student> studentsByEmail = from student in students
                               where student.Email.EndsWith("abv.bg")
@@ -73,7 +73,7 @@ namespace HomeworkStudentsLINQ.Classes
             return studentsByEmail;
         }
 
-        public static IEnumerable<Student> StudentsByPhone(List<Student> students)
+        public static IEnumerable<Student> StudentsByPhone(IEnumerable<Student> students)
         {
             IEnumerable<Student> studentsByPhone = from student in students
                               where student.Tel != "" && student.City == "Sofia"
@@ -82,7 +82,7 @@ namespace HomeworkStudentsLINQ.Classes
             return studentsByPhone;
         }
 
-        public static IEnumerable<Student> StudentsByMarks(List<Student> students)
+        public static IEnumerable<Student> StudentsByMarks(IEnumerable<Student> students)
         {
             var studentMarks = from student in students
                                where student.Marks.Contains(6)
@@ -95,13 +95,13 @@ namespace HomeworkStudentsLINQ.Classes
             return studentMarks as IEnumerable<Student>;
         }
 
-        public static IEnumerable<Student> StudentsWithTwoMarks(List<Student> students)
+        public static IEnumerable<Student> StudentsWithTwoMarks(IEnumerable<Student> students)
         {
             IEnumerable<Student> studentsWithTwoMarks = students.Where(student => student.Marks.Count == 2);
             return studentsWithTwoMarks;
         }
 
-        public static List<float> ExtractMarks(List<Student> students)
+        public static List<float> ExtractMarks(IEnumerable<Student> students)
         {
             IEnumerable<Student> studentsEnrolledInYear = students.Where(student => student.FN / 1000 % 10 == 6 && student.FN / 10000 % 10 == 0);
             List<float> marks = new List<float>();
@@ -112,7 +112,7 @@ namespace HomeworkStudentsLINQ.Classes
             return marks;
         }
 
-        public static IEnumerable<Student> Groups(List<Student> students, List<Group> groups)
+        public static IEnumerable<Student> Groups(IEnumerable<Student> students, List<Group> groups)
         {
             IEnumerable<Student> studentsInMath = from student in students
                                                   join g in groups
@@ -123,7 +123,7 @@ namespace HomeworkStudentsLINQ.Classes
             return studentsInMath;
         }
 
-        public static IEnumerable<Student> GroupedByGroupNumberLINQ(List<Student> students)
+        public static IEnumerable<Student> GroupedByGroupNumberLINQ(IEnumerable<Student> students)
         {
             var studentsGroupedByGroupNumber = from student in students
                                                group student by student.GroupNumber into g
@@ -133,7 +133,7 @@ namespace HomeworkStudentsLINQ.Classes
             return studentsGroupedByGroupNumber as IEnumerable<Student>;
         }
 
-        public static IEnumerable<Student> GroupedByGroupNumber(List<Student> students)
+        public static IEnumerable<Student> GroupedByGroupNumber(IEnumerable<Student> students)
         {
             var studentsGroupedByGroupNumber = students.GroupBy(student => student.GroupNumber);
 

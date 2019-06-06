@@ -6,13 +6,10 @@ using System.Threading.Tasks;
 
 namespace HomeworkStudentsLINQ.Classes
 {
-    class Student
+    public class Student
     {
         public string FirstName { get; }
         public string LastName { get; }
-        public enum Genders { Male, Female };
-        public Genders Gender { get; }
-        public DateTime DateOfBirth { get; set; }
         public int Age { get; set; }
         public int FN { get; set; }
         public string Tel { get; set; }
@@ -44,16 +41,32 @@ namespace HomeworkStudentsLINQ.Classes
             return fn;
         }
 
-        public Student(string firstName, string lastName, Genders gender, int age, int groupNumber, int enrollmentYear, string tel = "")
+        public Student(string firstName, string lastName, string city, int age, int groupNumber, int enrollmentYear, string email, string tel = "")
         {
             FirstName = firstName;
             LastName = lastName;
-            Gender = gender;
+            City = city;
             Age = age;
             Tel = tel;
+            Email = email;
             GroupNumber = groupNumber;
             EnrollmentYear = enrollmentYear;
             FN = GetHashCode();
+        }
+
+        public override string ToString()
+        {
+            StringBuilder sb = new StringBuilder();
+            sb.Append($"First Name: {FirstName}\n");
+            sb.Append($"Last Name: {LastName}\n");
+            sb.Append($"Group Number: {GroupNumber}\n");
+            sb.Append($"Age: {Age}\n");
+            sb.Append($"FN: {FN}\n");
+            sb.Append($"Tel: {Tel}\n");
+            sb.Append($"Email: {Email}\n");
+            sb.Append($"City: {City}\n");
+
+            return sb.ToString();
         }
     }
 }
