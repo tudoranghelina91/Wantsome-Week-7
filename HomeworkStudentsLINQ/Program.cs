@@ -27,119 +27,32 @@ namespace HomeworkStudentsLINQ
                 new Student("Gigi", "Buzalau", "Sofia", 26, 1, 2001, "abcd@xysz.com",new List<float>() {3.3f, 2.6f, 1f }, "45113"),
             };
 
-            Console.WriteLine("FIRST BEFORE LAST:");
-            IEnumerable<Student> firstBeforeLast = Queries.FirstBeforeLast(students);
-            foreach (Student student in firstBeforeLast)
-            {
-                Console.WriteLine(student);
-            }
-            Console.WriteLine("AGE RANGE:");
-            IEnumerable<Student> ageRange = Queries.AgeRange(students);
-            foreach (Student student in ageRange)
-            {
-                Console.WriteLine(student);
-            }
-
-            Console.WriteLine("ORDER STUDENTS:");
-            IEnumerable<Student> orderStudents = Queries.OrderStudents(students);
-            foreach (Student student in orderStudents)
-            {
-                Console.WriteLine(student);
-            }
-
-            Console.WriteLine("ORDER STUDENTS LINQ:");
-            IEnumerable<Student> orderStudentsLinq = Queries.OrderStudentsLINQ(students);
-            foreach (Student student in orderStudentsLinq)
-            {
-                Console.WriteLine(student);
-            }
-
-            Console.WriteLine("STUDENT GROUPS:");
-            IEnumerable<Student> studentGroups = Queries.StudentGroup(students);
-            foreach (Student student in studentGroups)
-            {
-                Console.WriteLine(student);
-            }
-
-            Console.WriteLine("STUDENT GROUPS LINQ:");
-            IEnumerable<Student> studentGroupsLinq = Queries.StudentGroupLINQ(students);
-            foreach (Student student in studentGroupsLinq)
-            {
-                Console.WriteLine(student);
-            }
-
-            Console.WriteLine("STUDENTS BY PHONE:");
-            IEnumerable<Student> studentsByPhone = Queries.StudentsByPhone(students);
-            foreach (Student student in studentsByPhone)
-            {
-                Console.WriteLine(student);
-            }
-
-            Console.WriteLine("STUDENTS EXCELLET MARK:");
-            IEnumerable<object> studentExcellentMarks = Queries.StudentsByMarks(students);
-            foreach (object student in studentExcellentMarks)
-            {
-                // nu stiu cum sa formatez rezultatul
-                StringBuilder studentExcellent = new StringBuilder();
-                Console.WriteLine(student);
-            }
-
-
-            Console.WriteLine("Students with only two marks: ");
-            IEnumerable<Student> studentsWithTwoMarks = Queries.StudentsWithTwoMarks(students);
-            foreach (Student student in studentsWithTwoMarks)
-            {
-                Console.WriteLine(student);
-            }
-
-            Console.WriteLine("Marks of Students Enrolled in 2016: ");
-            IEnumerable<float> studentsEnrolled2016 = Queries.ExtractMarks(students);
-            foreach (float mark in studentsEnrolled2016)
-            {
-                Console.WriteLine(mark);
-            }
-
-            Console.WriteLine("Students in math: ");
-            var studentsInMath = Queries.Groups(students, groups);
-            foreach (var student in studentsInMath)
-            {
-                Console.WriteLine($"First Name: {student.FirstName}");
-                Console.WriteLine($"Last Name: {student.LastName}");
-                Console.WriteLine($"Department Name: {student.DepartmentName}");
-                Console.WriteLine();
-            }
-
-            Console.WriteLine("Students grouped by group number: ");
-            var studentsByGroup = Queries.GroupedByGroupNumber(students);
-
-            foreach (var student in studentsByGroup)
-            {
-                foreach (var s in student)
-                {
-                    Console.WriteLine($"First Name: {s.FirstName}");
-                    Console.WriteLine($"Last Name: {s.LastName}");
-                    Console.WriteLine($"Group Number: {s.GroupNumber}");
-                    Console.WriteLine();
-                }
-
-                Console.WriteLine();
-            }
-
-            Console.WriteLine("Students grouped by group number LINQ: ");
-            var studentsByGroupLINQ = Queries.GroupedByGroupNumber(students);
-
-            foreach (var student in studentsByGroupLINQ)
-            {
-                foreach (var s in student)
-                {
-                    Console.WriteLine($"First Name: {s.FirstName}");
-                    Console.WriteLine($"Last Name: {s.LastName}");
-                    Console.WriteLine($"Group Number: {s.GroupNumber}");
-                    Console.WriteLine();
-                }
-
-                Console.WriteLine();
-            }
+            // First before last
+            PrintingClass.FirstBeforeLast(students);
+            // Age Range
+            PrintingClass.AgeRange(students);
+            // Order Students
+            PrintingClass.OrderStudents(students);
+            // Order Students LINQ
+            PrintingClass.OrderStudentsLINQ(students);
+            // Student Groups
+            PrintingClass.StudentGroups(students);
+            // Student Groups LINQ
+            PrintingClass.StudentGroupsLINQ(students);
+            // Students by phone
+            PrintingClass.StudentsByPhone(students);
+            // Students with Excellent Marks
+            PrintingClass.StudentsByMarks(students);
+            // Students with Two Marks
+            PrintingClass.StudentsWithTwoMarks(students);
+            // Extract Marks
+            PrintingClass.ExtractMarks(students);
+            // Groups
+            PrintingClass.Groups(students, groups);
+            // Grouped by group number
+            PrintingClass.GroupedByGroupNumber(students);
+            // Grouped by group number LINQ
+            PrintingClass.GroupedByGroupNumberLINQ(students);
 
             Console.ReadKey();
         }

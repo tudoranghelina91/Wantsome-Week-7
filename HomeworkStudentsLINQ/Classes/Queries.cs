@@ -82,7 +82,7 @@ namespace HomeworkStudentsLINQ.Classes
             return studentsByPhone;
         }
 
-        public static IEnumerable<object> StudentsByMarks(IEnumerable<Student> students)
+        public static dynamic StudentsByMarks(IEnumerable<Student> students)
         {
             var studentMarks = from student in students
                                where student.Marks.Contains(6)
