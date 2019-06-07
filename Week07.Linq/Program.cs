@@ -51,8 +51,39 @@
 
             // 3 - print number of posts for each user.
 
-            // TODO QUERY
+            Console.WriteLine("Users with number of posts: ");
+            //Dictionary<int, int> userPostCount = new Dictionary<int, int>();
+            //foreach (var post in allPosts)
+            //{
+            //    var userId = post.UserId;
+            //    if(userPostCount.ContainsKey(userId))
+            //    {
+            //        userPostCount[userId]++;
+            //    }
 
+            //    else
+            //    {
+            //        userPostCount.Add(userId, 1);
+            //    }
+            //}
+
+            //foreach (var p in userPostCount)
+            //{
+            //    Console.WriteLine(p);
+            //}
+
+            var result = allPosts.GroupBy(p => p.UserId)
+                    .Select(g => new
+                    {
+                        UserId = g.Key,
+                        NumberOfPosts = g.Count()
+                    });
+
+            foreach (var x in result)
+            {
+                Console.WriteLine($"UID: {x.UserId}");
+                Console.WriteLine($"POSTS: {x.NumberOfPosts}");
+            }
 
             // 4 - find all users that have lat and long negative.
             Console.WriteLine("Users with negative long and lat");
@@ -140,6 +171,30 @@
 
             // TODO QUERY
 
+            Console.WriteLine("USER POSTS");
+            var list = new List<UserPosts>();
+            foreach (var user in allUsers)
+            {
+                list.Add(new UserPosts
+                {
+                    User = user,
+                    Posts = allPosts.Where(p => p.UserId == user.Id).ToList()
+                });
+            }
+
+            foreach (var u in list)
+            {
+                Console.WriteLine($"{u.User.Name}'s POSTS:");
+                foreach (var p in u.Posts)
+                {
+                    Console.WriteLine("=============================");
+                    Console.WriteLine($"PID: {p.Id}");
+                    Console.WriteLine($"Post title: {p.Title}");
+                    Console.WriteLine("--------------");
+                    Console.WriteLine(p.Body);
+                }
+            }
+
 
             // 11 - order users by zip code
 
@@ -156,6 +211,25 @@
             }
 
             // 12 - order users by number of posts
+            var first10Posts = allPosts.Take(10).ToList();
+            var next10Posts = allPosts.Skip(10).Take(10).ToList();
+            foreach (var p in first10Posts)
+            {
+                Console.WriteLine("=============================");
+                Console.WriteLine($"PID: {p.Id}");
+                Console.WriteLine($"Post title: {p.Title}");
+                Console.WriteLine("--------------");
+                Console.WriteLine(p.Body);
+            }
+
+            foreach (var p in first10Posts)
+            {
+                Console.WriteLine("=============================");
+                Console.WriteLine($"PID: {p.Id}");
+                Console.WriteLine($"Post title: {p.Title}");
+                Console.WriteLine("--------------");
+                Console.WriteLine(p.Body);
+            }
 
             Console.ReadKey();
         }
