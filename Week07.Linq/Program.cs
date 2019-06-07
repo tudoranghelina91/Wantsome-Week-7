@@ -51,6 +51,8 @@
 
             // 3 - print number of posts for each user.
 
+            // TODO QUERY
+
 
             // 4 - find all users that have lat and long negative.
             Console.WriteLine("Users with negative long and lat");
@@ -136,6 +138,8 @@
             //    - create a new list: List<UserPosts>
             //    - insert in this list each user with his posts only
 
+            // TODO QUERY
+
 
             // 11 - order users by zip code
 
@@ -152,7 +156,6 @@
             }
 
             // 12 - order users by number of posts
-
 
             Console.ReadKey();
         }
