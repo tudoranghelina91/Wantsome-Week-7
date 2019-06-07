@@ -82,17 +82,17 @@ namespace HomeworkStudentsLINQ.Classes
             return studentsByPhone;
         }
 
-        public static IEnumerable<Student> StudentsByMarks(IEnumerable<Student> students)
+        public static IEnumerable<object> StudentsByMarks(IEnumerable<Student> students)
         {
             var studentMarks = from student in students
                                where student.Marks.Contains(6)
                                select new
                                {
                                    FullName = student.FirstName + " " + student.LastName,
-                                   student.Marks
+                                   Marks = string.Join(", ", student.Marks)
                                };
 
-            return studentMarks as IEnumerable<Student>;
+            return studentMarks;
         }
 
         public static IEnumerable<Student> StudentsWithTwoMarks(IEnumerable<Student> students)
@@ -123,6 +123,7 @@ namespace HomeworkStudentsLINQ.Classes
             return studentsInMath;
         }
 
+        // TODO THIS
         public static IEnumerable<Student> GroupedByGroupNumberLINQ(IEnumerable<Student> students)
         {
             var studentsGroupedByGroupNumber = from student in students
@@ -133,6 +134,7 @@ namespace HomeworkStudentsLINQ.Classes
             return studentsGroupedByGroupNumber as IEnumerable<Student>;
         }
 
+        // TODO THIS
         public static IEnumerable<Student> GroupedByGroupNumber(IEnumerable<Student> students)
         {
             var studentsGroupedByGroupNumber = students.GroupBy(student => student.GroupNumber);

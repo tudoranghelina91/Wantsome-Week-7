@@ -39,6 +39,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "IenumerableExtensions", "..
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "HomeworkStudentsLINQ", "..\HomeworkStudentsLINQ\HomeworkStudentsLINQ.csproj", "{46168C04-16C9-4A2B-8BFC-9D22483B03B9}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Divisible7And3", "..\Divisible7And3\Divisible7And3.csproj", "{9624A864-9CCF-4A4E-B1BC-CB2DDAF2BAF7}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -117,6 +119,10 @@ Global
 		{46168C04-16C9-4A2B-8BFC-9D22483B03B9}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{46168C04-16C9-4A2B-8BFC-9D22483B03B9}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{46168C04-16C9-4A2B-8BFC-9D22483B03B9}.Release|Any CPU.Build.0 = Release|Any CPU
+		{9624A864-9CCF-4A4E-B1BC-CB2DDAF2BAF7}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{9624A864-9CCF-4A4E-B1BC-CB2DDAF2BAF7}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{9624A864-9CCF-4A4E-B1BC-CB2DDAF2BAF7}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{9624A864-9CCF-4A4E-B1BC-CB2DDAF2BAF7}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

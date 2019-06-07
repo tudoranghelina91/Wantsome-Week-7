@@ -41,7 +41,7 @@ namespace HomeworkStudentsLINQ.Classes
             return fn;
         }
 
-        public Student(string firstName, string lastName, string city, int age, int groupNumber, int enrollmentYear, string email, string tel = "")
+        public Student(string firstName, string lastName, string city, int age, int groupNumber, int enrollmentYear, string email, List<float> marks, string tel = "")
         {
             FirstName = firstName;
             LastName = lastName;
@@ -52,6 +52,7 @@ namespace HomeworkStudentsLINQ.Classes
             GroupNumber = groupNumber;
             EnrollmentYear = enrollmentYear;
             FN = GetHashCode();
+            Marks = marks;
         }
 
         public override string ToString()
