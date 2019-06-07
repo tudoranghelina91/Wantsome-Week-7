@@ -91,12 +91,6 @@ namespace HomeworkStudentsLINQ
             {
                 Console.WriteLine(student);
             }
-            Console.WriteLine("Students in math: ");
-            IEnumerable<Student> studentsInMath = Queries.StudentGroup(students);
-            foreach (Student student in studentsInMath)
-            {
-                Console.WriteLine(student);
-            }
 
             Console.WriteLine("Marks of Students Enrolled in 2016: ");
             IEnumerable<float> studentsEnrolled2016 = Queries.ExtractMarks(students);
@@ -105,12 +99,47 @@ namespace HomeworkStudentsLINQ
                 Console.WriteLine(mark);
             }
 
-            //Console.WriteLine("Students grouped by group number: ");
-            //IEnumerable<Student> studentsByGroup = Queries.GroupedByGroupNumber(students);
-            //foreach (Student student in studentsByGroup)
-            //{
-            //    Console.WriteLine(student);
-            //}
+            Console.WriteLine("Students in math: ");
+            var studentsInMath = Queries.Groups(students, groups);
+            foreach (var student in studentsInMath)
+            {
+                Console.WriteLine($"First Name: {student.FirstName}");
+                Console.WriteLine($"Last Name: {student.LastName}");
+                Console.WriteLine($"Department Name: {student.DepartmentName}");
+                Console.WriteLine();
+            }
+
+            Console.WriteLine("Students grouped by group number: ");
+            var studentsByGroup = Queries.GroupedByGroupNumber(students);
+
+            foreach (var student in studentsByGroup)
+            {
+                foreach (var s in student)
+                {
+                    Console.WriteLine($"First Name: {s.FirstName}");
+                    Console.WriteLine($"Last Name: {s.LastName}");
+                    Console.WriteLine($"Group Number: {s.GroupNumber}");
+                    Console.WriteLine();
+                }
+
+                Console.WriteLine();
+            }
+
+            Console.WriteLine("Students grouped by group number LINQ: ");
+            var studentsByGroupLINQ = Queries.GroupedByGroupNumber(students);
+
+            foreach (var student in studentsByGroupLINQ)
+            {
+                foreach (var s in student)
+                {
+                    Console.WriteLine($"First Name: {s.FirstName}");
+                    Console.WriteLine($"Last Name: {s.LastName}");
+                    Console.WriteLine($"Group Number: {s.GroupNumber}");
+                    Console.WriteLine();
+                }
+
+                Console.WriteLine();
+            }
 
             Console.ReadKey();
         }

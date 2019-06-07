@@ -112,34 +112,39 @@ namespace HomeworkStudentsLINQ.Classes
             return marks;
         }
 
-        public static IEnumerable<Student> Groups(IEnumerable<Student> students, List<Group> groups)
+        public static dynamic Groups(IEnumerable<Student> students, List<Group> groups)
         {
-            IEnumerable<Student> studentsInMath = from student in students
-                                                  join g in groups
-                                                  on student.GroupNumber equals g.GroupNumber
-                                                  where g.DepartmentName == "Mathematics"
-                                                  select student;
+            var studentsInMath = from student in students
+                                 join g in groups
+                                 on student.GroupNumber equals g.GroupNumber
+                                 where g.DepartmentName == "Mathematics"
+                                 select new
+                                 {
+                                     student.FirstName,
+                                     student.LastName,
+                                     g.DepartmentName
+                                 };
 
             return studentsInMath;
         }
 
         // TODO THIS
-        public static IEnumerable<Student> GroupedByGroupNumberLINQ(IEnumerable<Student> students)
+        public static dynamic GroupedByGroupNumberLINQ(IEnumerable<Student> students)
         {
             var studentsGroupedByGroupNumber = from student in students
                                                group student by student.GroupNumber into g
+                                               orderby g.Key
                                                select g;
 
 
-            return studentsGroupedByGroupNumber as IEnumerable<Student>;
+            return studentsGroupedByGroupNumber;
         }
 
         // TODO THIS
-        public static IEnumerable<Student> GroupedByGroupNumber(IEnumerable<Student> students)
+        public static dynamic GroupedByGroupNumber(IEnumerable<Student> students)
         {
             var studentsGroupedByGroupNumber = students.GroupBy(student => student.GroupNumber);
-
-            return studentsGroupedByGroupNumber as IEnumerable<Student>;
+            return studentsGroupedByGroupNumber;
         }
     }
 }
