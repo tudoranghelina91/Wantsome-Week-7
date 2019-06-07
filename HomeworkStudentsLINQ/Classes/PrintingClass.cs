@@ -8,7 +8,21 @@ namespace HomeworkStudentsLINQ.Classes
 {
     class PrintingClass
     {
-        public static void PrintQuery<T>(IEnumerable<T> collection)
+        public static void PrintNext()
+        {
+            Console.WriteLine("Press enter to print the next query");
+            ConsoleKeyInfo cki = Console.ReadKey(true);
+            if (cki.Key.Equals(ConsoleKey.Enter))
+            {
+                Console.Clear();
+                return;
+            }
+
+            else
+                PrintNext();
+        }
+
+        private static void PrintQuery<T>(IEnumerable<T> collection)
         {
             foreach (var element in collection)
             {
