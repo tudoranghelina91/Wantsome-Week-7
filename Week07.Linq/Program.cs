@@ -169,8 +169,6 @@
             //    - create a new list: List<UserPosts>
             //    - insert in this list each user with his posts only
 
-            // TODO QUERY
-
             Console.WriteLine("USER POSTS");
             var list = new List<UserPosts>();
             foreach (var user in allUsers)
