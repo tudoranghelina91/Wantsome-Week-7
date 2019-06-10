@@ -9,13 +9,13 @@ namespace DownloadAFile.Classes
     {
         public static void Download(string url)
         {
+            WebClient webClient = new WebClient();
             try
             {
                 Uri uri = new Uri(url);
                 string fileName = FileOps.SetName(uri);
                 Uri currentPath = new Uri(Directory.GetCurrentDirectory() + '/' + fileName);
 
-                WebClient webClient = new WebClient();
 
                 if (uri.AbsolutePath == currentPath.AbsolutePath)
                 {
@@ -33,11 +33,21 @@ namespace DownloadAFile.Classes
                 {
                     OutputHandling.Error($"UNABLE TO DOWNLOAD {fileName}, PLEASE MAKE SURE THAT THE FILE PATH IS CORRECT");
                 }
+
+                finally
+                {
+                    webClient.Dispose();
+                }
             }
 
             catch (UriFormatException)
             {
                 OutputHandling.Error("INVALID URL FORMAT SPECIFIED");
+            }
+
+            finally
+            {
+                webClient.Dispose();
             }
         }
 
