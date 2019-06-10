@@ -21,35 +21,32 @@ namespace ReadFileContents.Classes
 
             catch(ArgumentException)
             {
-                fileContents.Clear();
                 OutputHandling.Error("PATH NAMES CANNOT CONTAIN SPECIAL CHARACTERS OR EMPTY SPACES");
             }
 
             catch(DirectoryNotFoundException)
             {
-                fileContents.Clear();
                 OutputHandling.Error("NO SUCH DIRECTORY!");
             }
 
             catch(FileNotFoundException)
             {
-                fileContents.Clear();
                 OutputHandling.Error("FILE NOT FOUND!");
             }
 
             catch(UnauthorizedAccessException)
             {
-                fileContents.Clear();
                 OutputHandling.Error("YOU ARE NOT ALLOWED TO ACCESS THIS PATH");
             }
 
             catch(Exception)
             {
-                throw;
+                OutputHandling.Error("UNKNOWN EXCEPTION");
             }
 
             finally
             {
+                fileContents.Clear();
                 ExitProgram();
             }
         }
